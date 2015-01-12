@@ -1,3 +1,16 @@
-<h2 id='title'>Welcome to Ember.js</h2>
+<nav class="navbar navbar-default">
+	<div class="container">
+		<div class="navbar-header">
+			{{link-to "MyFlix" 'index' class="navbar-brand"}}
+		</div>
+		<ul class="nav navbar-nav">
+			<li>{{link-to "Catalog" 'index'}}</li>
+			<li>{{link-to "Add Movies" 'index'}}</li>
+		</ul>
 
+		<div class="navbar-from navbar-right">
+			<button class="btn btn-default navbar-btn">Sign In</button>
+		</div>
+	</div>
+</nav>
 {{outlet}}
