@@ -3,11 +3,11 @@ module API
 		module Defaults
 			extend ActiveSupport::Concern
 
-			include do
+			included do
 				prefix "api"
 				version "v1", using: :path
 				default_format :json
-				foramt :json
+				format :json
 				formatter :json, Grape::Formatter::ActiveModelSerializers
 
 				helpers do

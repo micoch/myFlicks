@@ -4,3 +4,8 @@ html, body {
 .navbar-brand{
 	font-size: 30px;
 }
+
+*{
+	border-radius: 0px !important;
+}
+

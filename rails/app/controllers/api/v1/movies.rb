@@ -19,15 +19,17 @@ module API
 
 				desc "Post to Api"
 				params do
-					requires :title, type: String
-					requires :director, type: String
-					requires :rating, type: String
+					group :movie, type: Hash do
+						requires :title, type: String
+						requires :director, type: String
+						requires :rating, type: String
+					end
 				end
 				post do
 					Movie.create!({
-						title: params[:title],
-						director: params[:director],
-						rating: params[:rating]
+						title: params[:movie][:title],
+						director: params[:movie][:director],
+						rating: params[:movie][:rating]
 					})
 				end
 			end
