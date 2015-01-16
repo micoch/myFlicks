@@ -8,6 +8,7 @@ var Router = Ember.Router.extend({
 Router.map(function() {
 	this.resource('movies', function(){
 		this.route('show', {path: ':movie_id'});
+		this.route('edit', {path: 'edit/:movie_id'});
 		this.route('create', {path: 'create'});
 	});
 });

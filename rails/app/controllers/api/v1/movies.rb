@@ -32,6 +32,18 @@ module API
 						rating: params[:movie][:rating]
 					})
 				end
+				desc "Put to Api"
+				params do
+					requires :id, type: String
+					group :movie, type: Hash do
+						requires :title, type: String
+						requires :director, type: String
+						requires :rating, type: String
+					end
+				end
+				put ':id' do
+					Movie.find_by_id(params[:id]).update_attributes(declared(params[:movie], {include_missing: false}))
+				end
 			end
 		end
 	end

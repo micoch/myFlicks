@@ -1,12 +1,12 @@
 <div>
 		<div class="panel panel-default col-lg-6 col-lg-offset-3">
 			<div class="panel-body">
-				<p class="col-lg-6">A listing of your movies listed below</p>
+				<h3 class="col-lg-6 text-center panel-title">Your Catalog</h3>
 				{{link-to "Add Movies" 'movies.create' class="btn btn-primary btn-large col-lg-6 pull-right"}}
 			</div>
 			<ul class="list-group">
 				{{#each}}
-				<li class="list-group-item">{{link-to title 'movies.show'}} <small class="pull-right">{{rating}}</small></li>
+				<li class="list-group-item">{{link-to title 'movies.show' this}} <small class="pull-right">{{rating}}</small></li>
 				{{/each}}
 			</ul>
 		</div>
